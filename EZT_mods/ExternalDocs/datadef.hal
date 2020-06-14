@@ -1,0 +1,42 @@
+
+begin
+  
+  
+  RecordBegin(ExternalFormDefVc,-,"");
+  NewAutosyncRegister(kSyncDirectionToClient,true);
+  RecordField(DocName,M4StrSet,31003,0);
+  RecordField(Comment,M4Str,40,0);
+  RecordField(Math,M4Matrix,0,0);
+  RecordField(IntVal1,M4Int,0,0);
+  RecordField(IntVal2,M4Int,0,0);
+  RecordField(IntVal3,M4Int,0,0);
+  ArrayBegin(Math,-,1);
+  ArrayField(LangCode,M4Code,200,0);
+  ArrayField(TemplateName,M4Str,255,0);
+  ArrayField(FirstField,M4Str,255,0);
+  EndArray;
+  MainKeyBegin(MainKey,0);
+  KeySegment(UUID);
+  KeyBegin(DocName);
+  KeySegment(DocName);
+  KeySegment(UUID);
+  EndRecord;
+
+  BlockBegin(ExternalFormBlock,0,"");
+  RecordField(Math,M4Matrix,0,0);
+  ArrayBegin(Math,-,1);
+  ArrayField(DocName,M4StrSet,31003,0);
+  ArrayField(Status,M4Set,432,0);
+  EndArray;
+  EndBlock;
+
+  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Documents", 0);
+  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Tools", 0);
+  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Level0", 0);
+
+  if (FileExists("halcust\\EZT_mods\\ExternalDocs\\includes.hal")) then begin
+    Exec_File("halcust\\EZT_mods\\ExternalDocs\\includes.hal");
+  end;
+
+  return;
+end;
