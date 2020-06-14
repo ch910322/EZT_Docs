@@ -1,0 +1,13 @@
+begin
+
+  if (DirExists("halcust/EZT_mods/Base")) then begin
+    Exec_File("halcust/EZT_mods/Base/datadef.hal");
+    SourceFile("halcust/EZT_mods/Base",0);
+  end;
+  if (DirExists("halcust/EZT_mods/ExternalForms")) then begin
+    Exec_File("halcust/EZT_mods/ExternalForms/datadef.hal");
+    SourceFile("halcust/EZT_mods/ExternalForms",0);
+  end;
+
+  return;
+end;
