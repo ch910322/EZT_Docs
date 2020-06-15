@@ -1,5 +1,9 @@
 begin
   transaction string 255 gModFolder;
+  
+  if (blank(gModFolder)) then begin
+    gModFolder = "halcust/EZT_mods";
+  end;
 
   SourceFile(gModFolder,0);
   if (DirExists(gModFolder & "/Base")) then begin
