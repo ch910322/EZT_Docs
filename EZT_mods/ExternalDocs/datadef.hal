@@ -1,6 +1,7 @@
 
 begin
-  
+  transaction string 255 gModFolder;
+ 
   
   RecordBegin(ExternalFormDefVc,-,"");
   NewAutosyncRegister(kSyncDirectionToClient,true);
@@ -29,13 +30,14 @@ begin
   ArrayField(Status,M4Set,432,0);
   EndArray;
   EndBlock;
+  
 
-  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Documents", 0);
-  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Tools", 0);
-  SourceFile("halcust\\EZT_mods\\ExternalDocs\\Level0", 0);
+  SourceFile(gModFolder & "\\ExternalDocs\\Documents", 0);
+  SourceFile(gModFolder & "\\ExternalDocs\\Tools", 0);
+  SourceFile(gModFolder & "\\ExternalDocs\\Level0", 0);
 
-  if (FileExists("halcust\\EZT_mods\\ExternalDocs\\includes.hal")) then begin
-    Exec_File("halcust\\EZT_mods\\ExternalDocs\\includes.hal");
+  if (FileExists(gModFolder & "\\ExternalDocs\\includes.hal")) then begin
+    Exec_File(gModFolder & "\\ExternalDocs\\includes.hal");
   end;
 
   return;

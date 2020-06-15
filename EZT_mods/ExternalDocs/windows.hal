@@ -1,6 +1,6 @@
 
 external outer procedure OuterGetExternalDocType(string,var string);
-external outer procedure OuterShowExternalDocFilters(string);
+external outer procedure OuterShowExternalDocFilters(string,string,var real);
 
 event startup
 begin
@@ -77,7 +77,7 @@ begin
         EditFieldTL(h+70,v,150,"Invoice Type",M4Set,Normal,31004,IntVal2,false,SetSClass);
         v = v + 10;
       otherwise
-        OuterShowExternalDocFilters(type);
+        OuterShowExternalDocFilters(FDr.DocName,type,v);
     end;
   end;
 

@@ -1,12 +1,14 @@
 begin
+  transaction string 255 gModFolder;
 
-  if (DirExists("halcust/EZT_mods/Base")) then begin
-    Exec_File("halcust/EZT_mods/Base/datadef.hal");
-    SourceFile("halcust/EZT_mods/Base",0);
+  SourceFile(gModFolder,0);
+  if (DirExists(gModFolder & "/Base")) then begin
+    Exec_File(gModFolder & "/Base/datadef.hal");
+    SourceFile(gModFolder & "/Base",0);
   end;
-  if (DirExists("halcust/EZT_mods/ExternalDocs")) then begin
-    Exec_File("halcust/EZT_mods/ExternalDocs/datadef.hal");
-    SourceFile("halcust/EZT_mods/ExternalDocs",0);
+  if (DirExists(gModFolder & "/ExternalDocs")) then begin
+    Exec_File(gModFolder & "/ExternalDocs/datadef.hal");
+    SourceFile(gModFolder & "/ExternalDocs",0);
   end;
 
   return;
