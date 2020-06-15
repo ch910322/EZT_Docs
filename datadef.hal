@@ -1,8 +1,6 @@
 begin
   transaction string 255 gModFolder;
   
-  gModFolder = "halcust/EZT_mods";
-
   if (DirExists("halcust/EZT_mods")) then begin
     Exec_File("halcust/EZT_mods/init.hal");
   end;
