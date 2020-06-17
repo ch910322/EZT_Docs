@@ -77,7 +77,7 @@ begin
         EditFieldTL(h+70,v,150,"Rēķina tips",M4Set,Normal,31004,IntVal2,false,SetSClass);
         v = v + 10;
       otherwise
-        OuterShowExternalDocFilters(FDr.DocName,type,v);
+        v = OuterShowExternalDocFilters(FDr.DocName,type,v);
     end;
   end;
 
