@@ -1,6 +1,6 @@
 
 external outer procedure OuterGetExternalDocType(string,var string);
-external outer function Integer OuterShowExternalDocFilters(string,string,var real);
+external outer function Integer OuterShowExternalDocFilters(string,string,real);
 
 event startup
 begin
