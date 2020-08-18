@@ -108,7 +108,7 @@ begin
   vs = 20; h = 50;
   Sizeable(-1,-1,0,0);
   MatrixBegin(10,v=20,-40,-20,-,99);
-  MatCol(1,24,"Tips",0,DocName,false,StrSetSClass);
+  MatColTL(1,24,"Tips",0,M4StrSet,Normal,31003,DocName,false,StrSetSClass);
   MatCol(1,-80,"Aktīvs",0,Status,false,SetSClass);
   EndMatrix;
   EndWindow;
