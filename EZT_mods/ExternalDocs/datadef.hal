@@ -1,6 +1,7 @@
 
 begin
   transaction string 255 gModFolder;
+  string 255 bd;
  
   
   RecordBegin(ExternalFormDefVc,-,"");
@@ -35,6 +36,10 @@ begin
   SourceFile(gModFolder & "\\ExternalDocs\\Documents", 0);
   SourceFile(gModFolder & "\\ExternalDocs\\Tools", 0);
   SourceFile(gModFolder & "\\ExternalDocs\\Level0", 0);
+  bd = left(VersionBuild,4);
+  if (bd>="8534") then begin
+    SourceFile(gModFolder & "\\ExternalDocs\\Level0_8534", 0);
+  end;
 
   if (FileExists(gModFolder & "\\ExternalDocs\\includes.hal")) then begin
     Exec_File(gModFolder & "\\ExternalDocs\\includes.hal");
