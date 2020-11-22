@@ -33,12 +33,18 @@ begin
   EndBlock;
   
 
-  SourceFile(gModFolder & "\\ExternalDocs\\Documents", 0);
-  SourceFile(gModFolder & "\\ExternalDocs\\Tools", 0);
-  SourceFile(gModFolder & "\\ExternalDocs\\Level0", 0);
   bd = left(VersionBuild,4);
+  SourceFile(gModFolder & "\\ExternalDocs\\Tools", 0);
+  SourceFile(gModFolder & "\\ExternalDocs\\Documents", 0);
+  SourceFile(gModFolder & "\\ExternalDocs\\Level0", 0);
+
   if (bd>="8534") then begin
     SourceFile(gModFolder & "\\ExternalDocs\\Level0_8534", 0);
+  end;
+  if (bd>="8131") then begin
+    SourceFile(gModFolder & "\\ExternalDocs\\Level3_8131", 3);
+  end else begin
+    SourceFile(gModFolder & "\\ExternalDocs\\Level3", 3);
   end;
 
   if (FileExists(gModFolder & "\\ExternalDocs\\includes.hal")) then begin
