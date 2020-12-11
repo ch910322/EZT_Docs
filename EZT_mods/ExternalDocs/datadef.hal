@@ -16,6 +16,8 @@ begin
   ArrayField(LangCode,M4Code,200,0);
   ArrayField(TemplateName,M4Str,255,0);
   ArrayField(FirstField,M4Str,255,0);
+  ArrayField(FirstField2,M4Str,255,0);
+  ArrayField(FirstField3,M4Str,255,0);
   EndArray;
   MainKeyBegin(MainKey,0);
   KeySegment(UUID);

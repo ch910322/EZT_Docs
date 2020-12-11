@@ -1,6 +1,8 @@
 
 external outer procedure OuterGetExternalDocType(string,var string);
+external outer function Boolean OuterGetExternalDocMatrix(string,var string);
 external outer function Integer OuterShowExternalDocFilters(string,string,real);
+
 
 event startup
 begin
@@ -82,9 +84,11 @@ begin
   end;
 
   MatrixBegin(10,v+=vs+20,-40,-20,-,99);
-  MatCol(1,24,"Language",0,LangCode,false,LangSClass);
-  MatCol(1,140,"Template",0,TemplateName,false,ExternalFormDefImgSClass);
-  MatCol(1,-200,"Table's First Field",0,FirstField,false,0); 
+  if (OuterGetExternalDocMatrix(FDr.DocName,type)==false) then begin
+    MatCol(1,24,"Language",0,LangCode,false,LangSClass);
+    MatCol(1,140,"Template",0,TemplateName,false,ExternalFormDefImgSClass);
+    MatCol(1,-200,"Table's First Field",0,FirstField,false,0); 
+  end;
   EndMatrix;
   EndWindow;
 end;
