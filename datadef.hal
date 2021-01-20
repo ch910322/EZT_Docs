@@ -1,8 +1,6 @@
 begin
   transaction string 255 gModFolder;
   
-  gModFolder = "halcust/EZT_mods";
-
   if (blank(gModFolder)) then begin
     gModFolder = "halcust/EZT_mods";
   end;
