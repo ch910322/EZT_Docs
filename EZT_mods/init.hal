@@ -4,8 +4,7 @@ begin
   if (blank(gModFolder)) then begin
     gModFolder = "halcust/EZT_mods";
   end;
-  
-  SourceFile(gModFolder,0);
+
   if (DirExists(gModFolder & "/Base")) then begin
     Exec_File(gModFolder & "/Base/datadef.hal");
     SourceFile(gModFolder & "/Base",0);
@@ -13,6 +12,11 @@ begin
   if (DirExists(gModFolder & "/ExternalDocs")) then begin
     Exec_File(gModFolder & "/ExternalDocs/datadef.hal");
     SourceFile(gModFolder & "/ExternalDocs",0);
+  end;
+
+  if (DirExists(gModFolder & "/Scan")) then begin
+    Exec_File(gModFolder & "/Scan/datadef.hal");
+    SourceFile(gModFolder & "/Scan",0);
   end;
 
   return;

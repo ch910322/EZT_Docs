@@ -1,12 +1,11 @@
 begin
   transaction string 255 gModFolder;
   
-  if (blank(gModFolder)) then begin
-    gModFolder = "halcust/EZT_mods";
-  end;
-  
-  if (DirExists(gModFolder)) then begin
-    Exec_File(gModFolder & "/init.hal");
+  gModFolder = "halcust/EZT_mods";
+
+  if (DirExists("halcust/EZT_mods")) then begin
+    SourceFile("halcust/EZT_mods",3);//for hal rules
+    Exec_File("halcust/EZT_mods/init.hal");
   end;
 
   return;
