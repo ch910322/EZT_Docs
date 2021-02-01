@@ -46,7 +46,7 @@ end;
 window ExternalFormDefDClass:1
   wtag("language","LAT"), wtag("product","*"), wtag("productcode","*"), wtag("device","computer")
 begin
-  real h,v,vs,v2,vs2,hm,h2;
+  real h,v,vs,v2,vs2,hm,h2,tmpv;
   Integer wn,cnt;
   record ExternalFormDefVc FDr;
   string 255 type;
@@ -77,7 +77,10 @@ begin
         EditFieldTL(h+70,v,150,"Rēķina tips",M4Set,Normal,31004,IntVal2,false,SetSClass);
         v = v + 10;
       otherwise
-        v = OuterShowExternalDocFilters(FDr.DocName,type,v);
+        tmpv = OuterShowExternalDocFilters(FDr.DocName,type,v);
+        if (tmpv>0) then begin
+          v = tmpv;
+        end;
     end;
   end;
 
