@@ -12,6 +12,7 @@ begin
   RecordField(IntVal1,M4Int,0,0);
   RecordField(IntVal2,M4Int,0,0);
   RecordField(IntVal3,M4Int,0,0);
+  RecordField(StrVal0,M4Str,255,0);
   ArrayBegin(Math,-,1);
   ArrayField(LangCode,M4Code,200,0);
   ArrayField(TemplateName,M4Str,255,0);
@@ -42,11 +43,6 @@ begin
 
   if (bd>="8534") then begin
     SourceFile(gModFolder & "\\ExternalDocs\\Level0_8534", 0);
-  end;
-  if (bd>="8131") then begin
-    SourceFile(gModFolder & "\\ExternalDocs\\Level3_8131", 3);
-  end else begin
-    SourceFile(gModFolder & "\\ExternalDocs\\Level3", 3);
   end;
 
   if (FileExists(gModFolder & "\\ExternalDocs\\includes.hal")) then begin
