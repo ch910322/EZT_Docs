@@ -6,8 +6,8 @@ begin
   end;
   
   if (DirExists(gModFolder)) then begin
-    SourceFile(gModFolder,3);//for hal rules
     Exec_File(gModFolder & "/init.hal");
+    SourceFile(gModFolder,0);
   end;
 
   return;

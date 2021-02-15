@@ -93,6 +93,7 @@ begin
     MatCol(1,-200,"Table's First Field",0,FirstField,false,0); 
   end;
   EndMatrix;
+  SpecialMenu("Document History",' ',0,"FormHistDsm");
   EndWindow;
 end;
 
