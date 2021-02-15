@@ -45,9 +45,9 @@ begin
   RecordField(FileName,M4Str,255,0);
   MainKeyBegin(SerNr,0);
   KeySegment(SerNr);
-  KeyBegin(FromUUID);
-  KeySegment(FromUUID);
-  KeySegment(Filename);
+  KeyBegin(FormUUID);
+  KeySegment(FormUUID);
+  KeySegment(FileName);
   KeySegment(TransDate);
   KeySegment(TransTime);
   KeySegment(SerNr);
