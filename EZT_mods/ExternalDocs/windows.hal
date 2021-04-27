@@ -2,7 +2,7 @@
 external outer procedure OuterGetExternalDocType(string,var string);
 external outer function Boolean OuterGetExternalDocMatrix(string,var string);
 external outer function Integer OuterShowExternalDocFilters(string,string,real);
-
+external outer function Boolean Ext_UseMutlipleTableDocs(string);
 
 event startup
 begin
@@ -90,7 +90,13 @@ begin
   if (OuterGetExternalDocMatrix(FDr.DocName,type)==false) then begin
     MatCol(1,24,"Language",0,LangCode,false,LangSClass);
     MatCol(1,140,"Template",0,TemplateName,false,ExternalFormDefImgSClass);
-    MatCol(1,-200,"Table's First Field",0,FirstField,false,0); 
+    if (Ext_UseMutlipleTableDocs(FDr.DocName)) then begin
+      MatCol(1,-300,"1st Table's 1st Field",0,FirstField,false,0);
+      MatCol(1,-200,"2nd Table's 1st Field",0,FirstField2,false,0);
+      MatCol(1,-100,"3rd Table's 1st Field",0,FirstField3,false,0);
+    end else begin
+      MatCol(1,-200,"Table's First Field",0,FirstField,false,0);
+    end;
   end;
   EndMatrix;
   SpecialMenu("Document History",' ',0,"FormHistDsm");
