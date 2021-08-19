@@ -18,5 +18,8 @@ begin
   if (bd=="8538") then begin
     SourceFile(gModFolder & "/ExternalDocs/8538/hal.hob",0);
   end;
+  if (bd=="8539") then begin
+    SourceFile(gModFolder & "/ExternalDocs/8539/hal.hob",0);
+  end;
   return;
 end;
